@@ -9,9 +9,17 @@ import 'package:flutter/material.dart';
  * */
 
 
-
-
-
+// 在flutter中 , 并不是所有的widget组件都有padding属性 , 没有padding属性的组件如果要实现相应的效果 , 可借助 Padding组件
+class TestPadding extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+        padding: EdgeInsets.fromLTRB(10, 20, 30, 40),
+        child: Image.network("https://www.itying.com/images/flutter/2.png",),
+    );
+  }
+}
 // * 5矩阵式列表
 // 2 通过GridVew.builder 实现网格布局
 class TestGridView extends StatelessWidget {
@@ -95,6 +103,7 @@ class TestGridView extends StatelessWidget {
           crossAxisCount: 4,
           mainAxisSpacing: 20, //主轴间隙 , 如果滚动方向为水平,则为水平方向两个格之间的距离 ,如果滚动方向为垂直,则为垂直方向两个格之间的距离
           crossAxisSpacing: 10,    //与主轴交叉方向的格间距
+          childAspectRatio: 0.9,
         ) ,//这样设置详细参数
         itemCount: this.listData.length,
         itemBuilder: this._getitem
