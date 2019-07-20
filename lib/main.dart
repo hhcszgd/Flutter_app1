@@ -11,9 +11,16 @@ import 'practice/StatefullWidgetUsage.dart';
 import 'practice/BottomNavigationBarItemUsage.dart';
 import 'practice/NameRouterUsage.dart';
 import 'practice/HomePageTest.dart';
-
+import 'practice/TopNaviBarUsage.dart';
+import 'practice/DrawerUsage.dart';
+import 'practice/ButtonUsage.dart';
+import 'practice/FloatingActionButtonUsage.dart';
+import 'practice/TextFieldUsage.dart';
+import 'practice/DatePickerUsage.dart';
+import 'practice/SwiperUsage.dart';
+import 'practice/AlertUsage.dart';
 void main() {
-  runApp(MyApp());
+  runApp(MyApp10());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +29,7 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       home: HomePageTest(),
+      debugShowCheckedModeBanner: false ,
       onGenerateRoute:
           onGenerateRoute, //当项目中执行Navigator.pushNamed(context,"/GoodsPageForTestingRouter" ,arguments: "3699");时会调用这个参数对应的函数
       theme: ThemeData(primaryColor: Colors.orange),

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app1/practice/NameRouterUsage.dart';
 import 'package:flutter_app1/practice/LoginTest.dart';
 import 'package:flutter_app1/practice/RegisterTest.dart';
-
+import 'TopNaviBarUsage.dart';
+import 'DrawerUsage.dart';
+import 'DatePickerUsage.dart';
 final routes = {
   "/GoodsPageForTestingRouter": (context, {arguments}) =>
       GoodsPageForTestingRouter(
@@ -13,6 +15,11 @@ final routes = {
   "/LoginTest": (context) => LoginTest(),
   "/LoginSuccessTest": (context) => LoginSuccessTest(),
   "/LoginFailureTest": (context) => LoginFailureTest(),
+  "/SystemTopNaviBarPage": (context) => SystemTopNaviBarPage(),
+  "/CustomTopTabBarController" : (context) => CustomTopTabBarController(),
+  "/TestSettingPage" : (context) => TestSettingPage(),
+  "/SystemDatePickerPage" : (context) => SystemDatePickerPage(),
+  "/CustomDatePickerPage" : (context) => CustomDatePickerPage(),
 };
 
 //函数类型为 , Route<dynamic> Function(RouteSettings settings);
