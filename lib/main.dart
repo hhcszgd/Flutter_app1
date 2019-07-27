@@ -19,8 +19,9 @@ import 'practice/TextFieldUsage.dart';
 import 'practice/DatePickerUsage.dart';
 import 'practice/SwiperUsage.dart';
 import 'practice/AlertUsage.dart';
+import 'practice/DioUsage.dart';
 void main() {
-  runApp(MyApp10());
+  runApp(MyApp11());
 }
 
 class MyApp extends StatelessWidget {

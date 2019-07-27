@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'RouterHandler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -73,6 +75,7 @@ class _AlertUsageState extends State<AlertUsage> {
                 child: Text("style 5"),
                 onPressed: () {
                   print("style 5");
+                  _myDialog();
                 },
               ),
             ],
@@ -215,4 +218,71 @@ class _AlertUsageState extends State<AlertUsage> {
     );
   }
 
+  void _myDialog() {
+     showDialog (
+      context: context,
+      builder: (context){
+        return MyDialog("title", "this is content , read it carefully , or you will regret");
+      },
+    );
+  }
+}
+
+
+class MyDialog extends Dialog{
+  String title;
+  String content;
+  MyDialog(this.title,this.content);
+
+  _countTimer(context){
+    var timer ;
+    // Timer.periodic(duration, callback)
+    timer = Timer.periodic(Duration(milliseconds: 3000), (t){
+        Navigator.pop(context);
+        t.cancel();//取消定时器
+    });
+  }
+   @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    _countTimer(context);
+    return Material(
+      type: MaterialType.transparency,//设置透明度
+      child: Container(
+        width: 111,
+        height: 222,
+        alignment: Alignment.center,
+        child: Container(
+          width: 111 ,
+          height: 123,
+          color: Colors.blue,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topCenter,
+                child: Text(this.title),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child:InkWell(
+                  child: Icon(Icons.close,size: 18,),
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+              Divider(),
+              Align(
+                alignment: Alignment.center,
+                child: Text(this.content),
+              ),
+            ],
+          ),
+          ),
+        ),
+      ),
+    );
+  }
 }
